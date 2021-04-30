@@ -5,3 +5,13 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 구현할 기능 목록
+
+#### Main Class
+- 입력 받는 기능
+
+#### Car Class
+- 전진 random함수 기능
+- 전진할 때 출력 기능
+- 최종 우승자 선출 기능

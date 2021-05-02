@@ -1,6 +1,7 @@
 package car;
 
 public class Car {
+
   private String name;
   private int position;
 
@@ -15,8 +16,8 @@ public class Car {
   public Car() {
   }
 
-  public Car(String name) {
-    this.name = name;
+  public Car(int position) {
+    this.position = position;
   }
 
   public Car(String name, int position) {

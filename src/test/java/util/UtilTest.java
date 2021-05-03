@@ -3,6 +3,7 @@ package util;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import car.Car;
+import car.Cars;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -35,7 +36,7 @@ public class UtilTest {
   @Test
   public void should_if_input_StringAndCar_Is_AddCarList() {
     String name = "Benz";
-    List<Car> carList = new ArrayList<>();
+    Cars carList = new Cars();
     util.addCar(name, carList);
     assertThat(carList.get(0).getName()).isEqualTo(name);
   }
@@ -57,7 +58,7 @@ public class UtilTest {
 
   @Test
   public void should_return_normal_carList() {
-    List<Car> carList = new ArrayList<>();
+    Cars carList = new Cars();
     carList.add(new Car("benz", 0));
     carList = util.positionMoveForward(carList);
     assertThat(carList.get(0).getName()).isEqualTo("benz");

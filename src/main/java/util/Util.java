@@ -1,13 +1,14 @@
 package util;
 
 import car.Car;
+import car.Cars;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Util {
 
-  List<Car> LargestCarList = new ArrayList<>();
+  Cars LargestCarList = new Cars();
 
   public String scanningInputString() {
     Scanner scn = new Scanner(System.in);
@@ -35,15 +36,15 @@ public class Util {
     return true;
   }
 
-  public List<Car> makeCarList(String[] carNames) {
-    List<Car> carList = new ArrayList<>();
+  public Cars makeCarList(String[] carNames) {
+    Cars carList = new Cars();
     for (int i = 0; i < carNames.length; i++) {
       addCar(carNames[i], carList);
     }
     return carList;
   }
 
-  public void addCar(String carName, List<Car> carList) {
+  public void addCar(String carName, Cars carList) {
     if (checkBoolean(carName)) {
       Car car = new Car(carName, 0);
       carList.add(car);
@@ -61,9 +62,10 @@ public class Util {
     return 0;
   }
 
-  public List<Car> positionMoveForward(List<Car> carList) {
-    List<Car> tempCarList = new ArrayList<>();
-    for (Car car : carList) {
+  public Cars positionMoveForward(Cars carList) {
+    Cars tempCarList = new Cars();
+    for (int i = 0; i < carList.size(); i++) {
+      Car car = carList.get(i);
       car.setPosition(car.getPosition() + checkNumber(getRandomNumber()));
       tempCarList.add(car);
     }
@@ -78,14 +80,14 @@ public class Util {
     return hyphen;
   }
 
-  public void printCarPosition(List<Car> carList) {
+  public void printCarPosition(Cars carList) {
     for (int i = 0; i < carList.size(); i++) {
       System.out
           .println(carList.get(i).getName() + " : " + returnHyphen(carList.get(i).getPosition()));
     }
   }
 
-  public void findTheWinner(List<Car> carList) {
+  public void findTheWinner(Cars carList) {
     Car tempCar = new Car(0);
 
     for (int i = 0; i < carList.size(); i++) {
@@ -130,7 +132,7 @@ public class Util {
 
   public void largestPositionIsRemoveAfterAdd(Car tempCar, Car car) {
     if (car.getPosition() > tempCar.getPosition()) {
-      LargestCarList = new ArrayList<>();
+      LargestCarList = new Cars();
       LargestCarList.add(car);
     }
   }
